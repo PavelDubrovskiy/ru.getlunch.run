@@ -36,13 +36,13 @@ public class getlunchRun extends CordovaPlugin {
      */
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		if(action.equals("yandexnavi")) {
-			this.yandexnavi(args.getString(0), callbackContext);
+			this.yandexnavi(JSONObject.fromObject(args.getString(0)), callbackContext);
 		}
 		
 		return true;
     }
 
-	public void yandexnavi(JSONArray coords, CallbackContext callback) {
+	public void yandexnavi(JSONObject coords, CallbackContext callback) {
 		try {
 			Intent yIntent = new Intent("ru.yandex.yandexnavi.action.BUILD_ROUTE_ON_MAP");
 			yIntent.setPackage("ru.yandex.yandexnavi");
