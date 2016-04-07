@@ -70,7 +70,7 @@ public class getlunchRun extends CordovaPlugin {
 	}
 	public void telcall(String phone, CallbackContext callback) {
 		try {
-			Intent yIntent = new Intent("android.intent.action.ACTION_CALL");
+			Intent yIntent = new Intent(android.intent.action.CALL);
 			yIntent.setData(Uri.parse("tel:"+phone));
 			this.cordova.getActivity().startActivity(yIntent);
 			callback.success();
