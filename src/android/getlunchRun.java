@@ -56,10 +56,10 @@ public class getlunchRun extends CordovaPlugin {
 				yIntent = new Intent("android.intent.action.ACTION_VIEW");
 				yIntent.setData(Uri.parse("market://details?id=ru.yandex.yandexnavi"));
 			} else {
-				yIntent.putExtra("lat_from", coordsJson.getFloat("lat_from");
-				yIntent.putExtra("lon_from", coordsJson.getFloat("lon_from");
-				yIntent.putExtra("lat_to", coordsJson.getFloat("lat_to");
-				yIntent.putExtra("lon_to", coordsJson.getFloat("lon_to");
+				yIntent.putExtra("lat_from", coordsJson.getFloat("lat_from"));
+				yIntent.putExtra("lon_from", coordsJson.getFloat("lon_from"));
+				yIntent.putExtra("lat_to", coordsJson.getFloat("lat_to"));
+				yIntent.putExtra("lon_to", coordsJson.getFloat("lon_to"));
 			}
 			this.cordova.getActivity().startActivity(yIntent);
 			callback.success();
