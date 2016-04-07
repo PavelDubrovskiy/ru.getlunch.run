@@ -53,7 +53,7 @@ public class getlunchRun extends CordovaPlugin {
 			// Проверяем, установлен ли Яндекс.Навигатор
 			if (infos == null || infos.size() == 0) {
 				// Если нет - будем открывать страничку Навигатора в Google Play
-				yIntent = new Intent('android.intent.action.ACTION_VIEW');
+				yIntent = new Intent("android.intent.action.ACTION_VIEW");
 				yIntent.setData(Uri.parse("market://details?id=ru.yandex.yandexnavi"));
 			} else {
 				yIntent.putExtra("lat_from", coords["lat_from"]);
