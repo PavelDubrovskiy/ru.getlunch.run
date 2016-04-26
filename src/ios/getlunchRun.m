@@ -26,14 +26,18 @@
 
     CDVPluginResult* pluginResult = nil;
     NSString* scheme = [command.arguments objectAtIndex:0];
-	NSString *result = [NSString stringWithFormat:@"%@%@", @"tel://", scheme];
+	NSString *result = [NSString stringWithFormat:@"%@%@", @"tel:", scheme];
+	
+	NSURL* appStoreURL = [NSURL URLWithString:@"tel:79160356749"];
+	[[UIApplication sharedApplication] openURL:appStoreURL];
+	/*
 	NSURL* naviURL = [NSURL URLWithString:result];
 	
 	[[UIApplication sharedApplication] openURL:naviURL];
 	pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:(true)];
 	//pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-	
+	*/
 }
 
 @end
