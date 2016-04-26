@@ -31,7 +31,7 @@
 	
 	[[UIApplication sharedApplication] openURL:naviURL];
 	pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:(true)];
-	
+	pluginResult = result;
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 	
 }
