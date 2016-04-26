@@ -8,8 +8,8 @@
     CDVPluginResult* pluginResult = nil;
     NSString* scheme = [command.arguments objectAtIndex:0];
 	NSURL* naviURL = [NSURL URLWithString:scheme];
-
-	if ([[UIApplication sharedApplication] canOpenURL:naviURL]) {
+	pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:scheme];
+	/*if ([[UIApplication sharedApplication] canOpenURL:naviURL]) {
 		// Если Навигатор установлен - открываем его
 		[[UIApplication sharedApplication] openURL:naviURL];
 		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:(true)];
@@ -18,7 +18,7 @@
 		NSURL* appStoreURL = [NSURL URLWithString:@"https://itunes.apple.com/ru/app/yandeks.navigator/id474500851?mt=8"];
 		[[UIApplication sharedApplication] openURL:appStoreURL];
 		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsBool:(false)];
-	}
+	}*/
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
@@ -26,7 +26,7 @@
 
     CDVPluginResult* pluginResult = nil;
     NSString* scheme = [command.arguments objectAtIndex:0];
-	NSString *result = [NSString stringWithFormat:@"%@%@", @"tel:", scheme];
+	NSString *result = [NSString stringWithFormat:@"%@%@", @"tel://", scheme];
 	NSURL* naviURL = [NSURL URLWithString:result];
 	
 	[[UIApplication sharedApplication] openURL:naviURL];
