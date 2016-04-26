@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	id="ru.getlunch.run"
-	version="0.0.2">
+	version="0.0.4">
 
     <name>GetLunchNative</name>
     <description>Cordova plugin for GetLunch.</description>
