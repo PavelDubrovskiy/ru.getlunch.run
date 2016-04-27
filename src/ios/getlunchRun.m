@@ -10,6 +10,10 @@
 	NSURL *naviURL = [NSURL URLWithString:scheme];
 	NSURL *callUrl = [NSURL URLWithString:@"yandexnavi://"];
 	
+	NSURL* naviURL = [NSURL URLWithString:@"yandexnavi://build_route_on_map?lat_from=55.751802&lon_from=37.586684&lat_to=55.758192&lon_to=37.642817"];
+	[[UIApplication sharedApplication] openURL:naviURL];
+		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:(true)];
+	/*
 	if ([[UIApplication sharedApplication] canOpenURL:callUrl]) {
 		// Если Навигатор установлен - открываем его
 		[[UIApplication sharedApplication] openURL:naviURL];
@@ -20,6 +24,7 @@
 		[[UIApplication sharedApplication] openURL:appStoreURL];
 		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsBool:(false)];
 	}
+	*/
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
