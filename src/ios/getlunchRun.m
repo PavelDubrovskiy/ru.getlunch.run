@@ -8,7 +8,7 @@
     CDVPluginResult *pluginResult = nil;
     NSString *scheme = [command.arguments objectAtIndex:0];
 	NSURL *naviURL = [NSURL URLWithString:scheme];
-	NSURL *callUrl = [NSURL URLWithString:@"yandexmaps://"];
+	NSURL *callUrl = [NSURL URLWithString:@"yandexnavi://"];
 	
 	if ([[UIApplication sharedApplication] canOpenURL:callUrl]) {
 		// Если Навигатор установлен - открываем его
