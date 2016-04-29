@@ -13,13 +13,14 @@
 	if ([[UIApplication sharedApplication] canOpenURL:naviURL]) {
 		// Если Навигатор установлен - открываем его
 		[[UIApplication sharedApplication] openURL:naviURL];
-		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:(true)];
+		//pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:(true)];
 	} else {
 		// Если не установлен - открываем страницу в App Store
 		NSURL *appStoreURL = [NSURL URLWithString:@"https://itunes.apple.com/ru/app/yandeks.navigator/id474500851?mt=8"];
 		[[UIApplication sharedApplication] openURL:appStoreURL];
-		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsBool:(false)];
+		//pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsBool:(false)];
 	}
+	pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
